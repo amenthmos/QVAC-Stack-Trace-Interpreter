@@ -11,6 +11,16 @@ npm start
 
 Then open http://localhost:32004
 
+## Example
+
+Input:
+
+> TypeError: Cannot read properties of undefined (reading 'map')
+
+Output:
+
+> This error typically means that the code is trying to access a property or method of an object that does not exist. In this case, it's likely that the code is trying to call a method named `map` on an object, but the object is `undefined`. This could be due to a missing import statement, a null or undefined reference, or an incorrect function call. A good place to start looking is the code snippet that called the `map` function, to identify where the error occurred.
+
 ## QVAC SDK version
 
 `@qvac/sdk` ^0.19.0 (see `package.json`).
