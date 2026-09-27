@@ -51,9 +51,13 @@ async function main() {
         const result = await generate(modelId, error.trim());
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify(result));
-      } catch (error) {
+      } catch (err) {
+        // Renamed from `error` to `err`: the outer scope already has an
+        // `error` variable (the user's submitted text), and reusing the
+        // same name for the caught exception here shadowed it, which was
+        // confusing to read even though it happened to work correctly.
         res.writeHead(500, { "Content-Type": "application/json" });
-        res.end(JSON.stringify({ error: error.message }));
+        res.end(JSON.stringify({ error: err.message }));
       }
       return;
     }

@@ -23,7 +23,7 @@ function stripPreamble(text) {
 }
 
 const FALLBACK = (v) =>
-      `This looks like an error related to: "${v.slice(0, 150)}". As a starting point, check the code near where this error is thrown and confirm the values involved are what you expect them to be.`;
+  `This looks like an error related to: "${v.slice(0, 150)}". As a starting point, check the code near where this error is thrown and confirm the values involved are what you expect them to be.`;
 
 export async function generate(modelId, error) {
   const run = completion({
